@@ -55,8 +55,8 @@ class Shop {
           }
         }
       }
+      Shop.reduceSellIn(this.items[i]);
     }
-
     return this.items;
   }
 
@@ -64,6 +64,10 @@ class Shop {
     if (item.quality > 0) {
       item.quality = item.quality - 1;
     }
+  }
+
+  static reduceSellIn(item) {
+    item.sellIn = item.sellIn - 1;
   }
 }
 module.exports = {
